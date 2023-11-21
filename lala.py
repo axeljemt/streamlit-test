@@ -19,7 +19,7 @@ st.title('Uber pickups in NYC')
 conn = st.connection("postgresql", type="sql")
 
 # Perform query.
-df = conn.query('SELECT * FROM table_1 limit 1;', ttl="10m")
+df = conn.query('SELECT * FROM table_1;', ttl="10m")
 
 # Print results.
 for row in df.itertuples():
