@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import psycopg2
-import sqlalchemy
+#import psycopg2
+#import sqlalchemy
 
 st.title('Uber pickups in NYC')
 
