@@ -7,7 +7,7 @@ import sqlalchemy
 st.title('Uber pickups in NYC')
 
 # Initialize connection.
-conn = st.connection("postgresql", type="sql")
+#conn = st.connection("postgresql", type="sql")
 
 st.title('Uber pickups in NYC2')
 # Perform query.
