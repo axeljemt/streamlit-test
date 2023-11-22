@@ -26,7 +26,15 @@ df = conn.query('SELECT * FROM table_1;', ttl="10m")
 #    st.write(f"{row.colument1} has a :{row.column2}:")
 
 #df = load_data()
-edited_df = st.data_editor(df, key="my_key", num_rows="dynamic") # 👈 An editable dataframe
+edited_df = st.data_editor(df, 
+    key="my_key", 
+    num_rows="dynamic",
+    column_config={
+        "colument1": st.column_config.NumberColumn(
+        label="Colument1",
+        disabled=True)
+    }
+    ) # 👈 An editable dataframe
 
 st.write("Here's the value in Session State:")
 st.write(st.session_state["my_key"])
