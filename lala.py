@@ -22,5 +22,11 @@ conn = st.connection("postgresql", type="sql")
 df = conn.query('SELECT * FROM table_1;', ttl="10m")
 
 # Print results.
-for row in df.itertuples():
-    st.write(f"{row.colument1} has a :{row.column2}:")
+#for row in df.itertuples():
+#    st.write(f"{row.colument1} has a :{row.column2}:")
+
+df = load_data()
+edited_df = st.data_editor(df) # 👈 An editable dataframe
+
+favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
+st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
